@@ -2,39 +2,37 @@
 
 import { motion } from 'framer-motion'
 
-const experiences = [
+const projects = [
   {
-  number: '01',
-  title: 'Short-Term Internship',
-  category: 'INTERNSHIP',
-  company: 'ULearn',
-  period: '14 APR 2025 – 31 MAY 2025',
-  description:
-    'Completed a short-term internship focused on Power BI and data visualization, gaining practical experience in analyzing data and creating meaningful visual reports and dashboards.',
-  role:
-    'Worked with Power BI to explore data, create visualizations and dashboards, and develop a better understanding of data analysis and business intelligence concepts.',
-  outcome:
-    'Gained hands-on experience in data visualization, dashboard creation and data analysis, strengthening my ability to turn data into clear and meaningful insights.',
-},
+    number: '01',
+    title: 'Fake News Detection',
+    category: 'MACHINE LEARNING',
+    description:
+      'A machine learning system designed to identify whether a news article is real or fake by analysing textual information and patterns within the content.',
+    technologies: 'Python · Pandas · Scikit-learn · NLP',
+    work:
+      'Data preprocessing, feature extraction, model training, testing and evaluation.',
+    outcome:
+      'Built a classification-based solution to support automated fake-news identification.',
+  },
   {
-  number: '02',
-  title: 'Long-Term Internship',
-  category: 'INTERNSHIP',
-  company: 'Adhoc Networking Solutions',
-  period: '01 DEC 2025 – 07 MAR 2026',
-  description:
-    'Completed a long-term internship focused on Machine Learning using Python, gaining practical exposure to machine learning concepts, Python programming and analytical problem-solving.',
-  role:
-    'Worked on various tasks related to Machine Learning using Python, applying technical knowledge while developing analytical thinking and understanding of machine learning concepts.',
-  outcome:
-    'Strengthened my Python and Machine Learning skills, improved technical understanding and developed a proactive approach toward learning emerging technologies.',
-},
+    number: '02',
+    title: 'E-Commerce Website',
+    category: 'FULL STACK DEVELOPMENT',
+    description:
+      'A full-stack e-commerce website designed to provide users with a simple and intuitive online shopping experience.',
+    technologies: 'HTML · CSS · JavaScript · Full Stack',
+    work:
+      'Designed the interface, developed website functionality and created a smooth shopping experience.',
+    outcome:
+      'Developed a responsive e-commerce platform with a clean and user-friendly interface.',
+  },
 ]
 
-export default function StudioSection() {
+export default function ProjectsSection() {
   return (
     <section
-      id="studio"
+      id="projects"
       style={{
         padding: '120px 6vw',
         background: '#f5f2eb',
@@ -58,7 +56,7 @@ export default function StudioSection() {
             letterSpacing: '-0.06em',
           }}
         >
-          EXPERIENCE
+          PROJECTS
         </h2>
 
         <span
@@ -68,7 +66,7 @@ export default function StudioSection() {
             textTransform: 'uppercase',
           }}
         >
-          PROFESSIONAL JOURNEY
+          SELECTED WORK
         </span>
       </div>
 
@@ -79,9 +77,9 @@ export default function StudioSection() {
           gap: '24px',
         }}
       >
-        {experiences.map((experience) => (
+        {projects.map((project) => (
           <motion.article
-            key={experience.number}
+            key={project.number}
             whileHover={{ y: -8 }}
             transition={{ duration: 0.25 }}
             style={{
@@ -109,7 +107,7 @@ export default function StudioSection() {
                   letterSpacing: '0.12em',
                 }}
               >
-                {experience.number}
+                {project.number}
               </span>
 
               <span
@@ -119,33 +117,22 @@ export default function StudioSection() {
                   textTransform: 'uppercase',
                 }}
               >
-                {experience.category}
+                {project.category}
               </span>
             </div>
 
             <div style={{ marginTop: '50px' }}>
               <h3
                 style={{
-                  margin: '0 0 12px',
+                  margin: '0 0 25px',
                   fontSize: 'clamp(2.3rem, 4vw, 4.5rem)',
                   lineHeight: 0.95,
                   letterSpacing: '-0.04em',
                   fontWeight: 600,
                 }}
               >
-                {experience.title}
+                {project.title}
               </h3>
-
-              <div
-                style={{
-                  marginBottom: '28px',
-                  fontSize: '0.75rem',
-                  letterSpacing: '0.12em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                {experience.company} · {experience.period}
-              </div>
 
               <p
                 style={{
@@ -155,7 +142,7 @@ export default function StudioSection() {
                   lineHeight: 1.65,
                 }}
               >
-                {experience.description}
+                {project.description}
               </p>
 
               <div
@@ -173,6 +160,28 @@ export default function StudioSection() {
                     marginBottom: '8px',
                   }}
                 >
+                  TECHNOLOGIES
+                </div>
+
+                <p
+                  style={{
+                    margin: 0,
+                    fontSize: '0.9rem',
+                    lineHeight: 1.5,
+                  }}
+                >
+                  {project.technologies}
+                </p>
+              </div>
+
+              <div style={{ marginBottom: '25px' }}>
+                <div
+                  style={{
+                    fontSize: '0.65rem',
+                    letterSpacing: '0.15em',
+                    marginBottom: '8px',
+                  }}
+                >
                   MY ROLE
                 </div>
 
@@ -183,7 +192,7 @@ export default function StudioSection() {
                     lineHeight: 1.5,
                   }}
                 >
-                  {experience.role}
+                  {project.work}
                 </p>
               </div>
 
@@ -205,7 +214,7 @@ export default function StudioSection() {
                     lineHeight: 1.5,
                   }}
                 >
-                  {experience.outcome}
+                  {project.outcome}
                 </p>
               </div>
             </div>
@@ -217,23 +226,13 @@ export default function StudioSection() {
                 borderTop: '1px solid rgba(18,18,17,0.35)',
                 display: 'flex',
                 justifyContent: 'space-between',
-                alignItems: 'center',
                 fontSize: '0.7rem',
                 letterSpacing: '0.14em',
                 textTransform: 'uppercase',
               }}
             >
               <span>DATTA ADARI</span>
-
-              <span
-                style={{
-                  border: '1px solid #121211',
-                  padding: '10px 14px',
-                  cursor: 'pointer',
-                }}
-              >
-                2026
-              </span>
+              <span>2026</span>
             </div>
           </motion.article>
         ))}

@@ -41,34 +41,38 @@ export const site = {
 skills: {
   heading: 'SKILLS',
   items: [
-  { label: 'Python', short: 'Py', src: null, scale: 1 },
-  { label: 'SQL', short: 'SQL', src: null, scale: 1 },
-  { label: 'Machine Learning', short: 'ML', src: null, scale: 1 },
-  { label: 'Pandas', short: 'Pd', src: null, scale: 1 },
-  { label: 'Scikit-learn', short: 'Sk', src: null, scale: 1 },
-  { label: 'Tableau', short: 'Tb', src: null, scale: 1 },
-  { label: 'NumPy', short: 'Np', src: null, scale: 1 },
-  { label: 'Matplotlib', short: 'Mt', src: null, scale: 1 },
-  { label: 'Data Visualization', short: 'DV', src: null, scale: 1 },
-  { label: 'Statistics', short: 'St', src: null, scale: 1 },
-  { label: 'Excel', short: 'Ex', src: null, scale: 1 },
-  { label: 'Power BI', short: 'PB', src: null, scale: 1 },
-  { label: 'Git & GitHub', short: 'Git', src: null, scale: 1 },
-  { label: 'Flask', short: 'Fl', src: null, scale: 1 },
-  { label: 'Artificial Intelligence', short: 'AI', src: null, scale: 1 },
-  { label: 'Jupyter Notebook', short: 'Jn', src: null, scale: 1 },
-  { label: 'Data Analysis', short: 'DA', src: null, scale: 1 },
-  { label: 'Deep Learning', short: 'DL', src: null, scale: 1 },
-],
+    { label: 'Python', short: 'Py', src: null, scale: 1 },
+    { label: 'SQL', short: 'SQL', src: null, scale: 1 },
+    { label: 'Machine Learning', short: 'ML', src: null, scale: 1 },
+    { label: 'Pandas', short: 'Pd', src: null, scale: 1 },
+    { label: 'Scikit-learn', short: 'Sk', src: null, scale: 1 },
+    { label: 'Tableau', short: 'Tb', src: null, scale: 1 },
+  ],
 },
 
   intro: {
     heading: 'HELLO',
     lede: "Hi, I'm DATTA ADARI.",
-    paragraphs: [ 'I am a Data Science graduate with a strong interest in Data Analytics, Machine Learning and Artificial Intelligence.', 'I work with Python, SQL, Pandas, Scikit-learn and Tableau to explore data, build machine learning solutions and create meaningful insights.', 'I enjoy solving real-world problems through data and continuously learning new technologies in the field of Data Science.', ]
+    paragraphs: [
+      'I design digital experiences that are not just beautiful, but meaningful.',
+      "I've worked on dashboards, marketplaces, SaaS platforms, and interactive websites that solve real problems and deliver real impact.",
+      "Right now I'm focused on building products that are simple, intuitive and powerful for users across industries.",
+    ],
   },
 
-  education: { heading: 'EDUCATION', items: [ { degree: 'BSc Data Science', detail: 'Aditya Degree College, Tuni | 2023 – 2026', }, { degree: 'Intermediate', detail: 'Sri Prakash Junior College, Payakaraopeta | 2021 – 2023', }, { degree: 'Schooling', detail: 'Sri Prakash Vidya Niketan, Tuni | 2020 – 2021', }, ], },
+  education: {
+  heading: 'EDUCATION',
+  items: [
+    {
+      degree: 'BSc Data Science',
+      detail: 'Aditya Degree College, Tuni | Completed 2026',
+    },
+    {
+      degree: 'Bachelor of Science in Data Science',
+      detail: 'Aditya Degree College, Tuni | 2023 – 2026',
+    },
+  ],
+},
 
   /**
    * THE STU â€” abbreviated on purpose. Do not expand it.
@@ -77,7 +81,47 @@ skills: {
    * rather than a random seed, because randomness reads as a bug and a
    * decision reads as a hand. Rotations follow the brief: -5 / +1.2 / +4.
    */
-  studio: { heading: 'THE STU', items: [ { quote: 'I turn data into insights, and insights into ideas that create impact.', author: 'Datta Adari', rotation: -5, drop: 0, shade: 0.2, skew: -0.9, indent: 1, objectPosition: '50% 50%', href: null as string | null, }, { quote: 'Every dataset tells a story. My goal is to discover it, understand it, and make it useful.', author: 'Datta Adari', rotation: 1.2, drop: 11, shade: 0.6, skew: 0.7, indent: 0, objectPosition: '56% 38%', href: null as string | null, }, { quote: 'I believe the future belongs to those who can turn data into meaningful decisions.', author: 'Datta Adari', rotation: 4, drop: 3, shade: 0.35, skew: -0.5, indent: 2, objectPosition: '50% 50%', href: null as string | null, }, ], },
+  studio: {
+    heading: 'THE STU',
+    items: [
+      {
+        quote: "You can't compete with someone who's having fun.",
+        author: 'Tiago Forte',
+        rotation: -5,
+        drop: 0,
+        shade: 0.2,
+        skew: -0.9,
+        indent: 1,
+        objectPosition: '50% 50%',
+        href: null as string | null,
+      },
+      {
+        quote: 'He who is back again, never quit, quick to sail.',
+        author: 'Lil Yachty',
+        rotation: 1.2,
+        drop: 11,
+        shade: 0.6,
+        skew: 0.7,
+        indent: 0,
+        /* The eyes sit high and right of centre â€” a dead-centre crop puts the
+           frame edge through them. */
+        objectPosition: '56% 38%',
+        href: null as string | null,
+      },
+      {
+        quote:
+          'I know of no better life purpose than to perish in attempting the great and the impossible.',
+        author: 'Friedrich Nietzsche',
+        rotation: 4,
+        drop: 3,
+        shade: 0.35,
+        skew: -0.5,
+        indent: 2,
+        objectPosition: '50% 50%',
+        href: null as string | null,
+      },
+    ],
+  },
 projects: {
   heading: 'PROJECTS',
   items: [
@@ -129,10 +173,10 @@ projects: {
      * or a portfolio here the moment you have one and it lights up on its own.
      */
     links: [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/adari-datta-7ab545341' as string | null },
-  { label: 'GitHub', href: 'https://github.com/adaridatta9090' as string | null },
-  { label: 'Email', href: 'mailto:adaridatta9@gmail.com' as string | null },
-],
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/gireesh-kumar-reddy-kolli-' as string | null },
+      { label: 'Instagram', href: 'https://www.instagram.com/itsgireeshreddy' as string | null },
+      { label: 'Email', href: 'mailto:adaridatta9@gmail.com' as string | null },
+    ],
   },
 } as const
 

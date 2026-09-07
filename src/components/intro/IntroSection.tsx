@@ -25,7 +25,7 @@ import SkillsGrid from './SkillsGrid'
  * DOM position, so the plate can lead while the markup keeps its reading
  * order:
  *
- *     frame → HELLO → copy → skills and experience
+ *     frame → HELLO → copy → skills
  *
  * The portrait hangs a little past the bottom of the sheet so that the tear
  * below runs behind it — a photograph laid on the page before it was torn.
@@ -36,16 +36,29 @@ export default function IntroSection() {
 
   const group: Variants = {
     hidden: {},
-    show: { transition: { delayChildren: reduced ? 0 : 0.05 } },
+    show: {
+      transition: {
+        delayChildren: reduced ? 0 : 0.05,
+      },
+    },
   }
 
   /** Copy and headings: a short rise. */
   const item: Variants = {
-    hidden: { opacity: 0, y: 24 },
+    hidden: {
+      opacity: 0,
+      y: 24,
+    },
     show: (i: number) => ({
       opacity: 1,
       y: 0,
-      transition: reduced ? { duration: 0 } : { duration: 0.95, delay: i * 0.13, ease: ease.paper },
+      transition: reduced
+        ? { duration: 0 }
+        : {
+            duration: 0.95,
+            delay: i * 0.13,
+            ease: ease.paper,
+          },
     }),
   }
 
@@ -55,21 +68,39 @@ export default function IntroSection() {
    * the grain was always in the paper and you simply had not noticed it yet.
    */
   const plate: Variants = {
-    hidden: { opacity: 0, scale: 1.045 },
+    hidden: {
+      opacity: 0,
+      scale: 1.045,
+    },
     show: {
       opacity: 1,
       scale: 1,
-      transition: reduced ? { duration: 0 } : { duration: 1.5, ease: ease.paper },
+      transition: reduced
+        ? { duration: 0 }
+        : {
+            duration: 1.5,
+            ease: ease.paper,
+          },
     },
   }
 
   const heading: Variants = {
-    hidden: { opacity: 0, y: 26, filter: 'blur(6px)' },
+    hidden: {
+      opacity: 0,
+      y: 26,
+      filter: 'blur(6px)',
+    },
     show: {
       opacity: 1,
       y: 0,
       filter: 'blur(0px)',
-      transition: reduced ? { duration: 0 } : { duration: 0.95, delay: 0.13, ease: ease.paper },
+      transition: reduced
+        ? { duration: 0 }
+        : {
+            duration: 0.95,
+            delay: 0.13,
+            ease: ease.paper,
+          },
     },
   }
 
@@ -91,14 +122,20 @@ export default function IntroSection() {
           <motion.div className="area-heading" variants={heading}>
             <h2
               className="display m-0 text-ink"
-              style={{ fontSize: 'clamp(3.25rem, 6.4vw, 8.5rem)', letterSpacing: '-0.045em' }}
+              style={{
+                fontSize: 'clamp(3.25rem, 6.4vw, 8.5rem)',
+                letterSpacing: '-0.045em',
+              }}
             >
               {site.intro.heading}
             </h2>
           </motion.div>
 
           {/* -------------------------------------------------- the plate */}
-          <motion.div className="area-portrait relative z-[3] lg:-mb-[7vw]" variants={plate}>
+          <motion.div
+            className="area-portrait relative z-[3] lg:-mb-[7vw]"
+            variants={plate}
+          >
             <VideoArtFrame
               video={assets.frame.video}
               poster={assets.frame.poster}
@@ -113,7 +150,9 @@ export default function IntroSection() {
 
           {/* -------------------------------------------------- copy */}
           <motion.div className="area-copy" variants={item} custom={2}>
-            <p className="body-copy m-0 mt-[0.6em] font-bold text-ink">{site.intro.lede}</p>
+            <p className="body-copy m-0 mt-[0.6em] font-bold text-ink">
+              {site.intro.lede}
+            </p>
 
             <div className="mt-[1.6em] flex flex-col gap-[1.15em]">
               {site.intro.paragraphs.map((para) => (
@@ -123,38 +162,33 @@ export default function IntroSection() {
               ))}
             </div>
 
-            <h3 className="section-head m-0 mt-[1.5em] text-ink">{site.education.heading}</h3>
+            <h3 className="section-head m-0 mt-[1.5em] text-ink">
+              {site.education.heading}
+            </h3>
 
             <dl className="m-0 mt-[1.1em] flex flex-col gap-[1.15em]">
               {site.education.items.map((edu) => (
                 <div key={edu.degree}>
-                  <dt className="body-copy m-0 font-bold leading-snug text-ink">{edu.degree}</dt>
-                  <dd className="body-copy m-0 mt-[0.2em] leading-snug text-graphite">{edu.detail}</dd>
+                  <dt className="body-copy m-0 font-bold leading-snug text-ink">
+                    {edu.degree}
+                  </dt>
+
+                  <dd className="body-copy m-0 mt-[0.2em] leading-snug text-graphite">
+                    {edu.detail}
+                  </dd>
                 </div>
               ))}
             </dl>
           </motion.div>
 
-          {/* -------------------------------------------------- skills + experience */}
+          {/* -------------------------------------------------- skills */}
           <motion.div className="area-aside" variants={item} custom={3}>
             <div>
-              <h3 className="section-head m-0 mb-[0.75em] text-ink">{site.skills.heading}</h3>
-              <SkillsGrid />
-            </div>
+              <h3 className="section-head m-0 mb-[0.75em] text-ink">
+                {site.skills.heading}
+              </h3>
 
-            <div>
-              <h3 className="section-head m-0 mb-[0.75em] text-ink">{site.experience.heading}</h3>
-              <ol className="m-0 flex list-none flex-col gap-[1.5em] p-0">
-                {site.experience.items.map((job) => (
-                  <li key={job.period}>
-                    <p className="body-copy m-0 font-bold leading-snug tracking-[-0.01em] text-ink">
-                      {job.period}
-                    </p>
-                    <p className="body-copy m-0 mt-[0.15em] font-bold leading-snug text-ink">{job.role}</p>
-                    <p className="body-copy m-0 mt-[0.1em] leading-snug text-graphite">{job.company}</p>
-                  </li>
-                ))}
-              </ol>
+              <SkillsGrid />
             </div>
           </motion.div>
         </motion.div>
