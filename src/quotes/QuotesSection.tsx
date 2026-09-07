@@ -1,7 +1,4 @@
-```tsx
 'use client'
-
-import { motion } from 'framer-motion'
 
 const quotes = [
   {
@@ -69,14 +66,9 @@ export default function QuotesSection() {
           gap: '24px',
         }}
       >
-        {quotes.map((item, index) => (
-          <motion.article
+        {quotes.map((item) => (
+          <article
             key={item.number}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: index * 0.12 }}
-            whileHover={{ y: -8 }}
             style={{
               minHeight: '420px',
               padding: '34px',
@@ -118,7 +110,7 @@ export default function QuotesSection() {
             >
               — DATTA ADARI
             </div>
-          </motion.article>
+          </article>
         ))}
       </div>
 
@@ -147,4 +139,3 @@ export default function QuotesSection() {
     </section>
   )
 }
-```
